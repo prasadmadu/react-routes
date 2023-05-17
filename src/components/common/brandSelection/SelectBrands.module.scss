@@ -17,6 +17,17 @@
   margin: 10px;
   cursor: pointer;
 }
+.image {
+  width: calc(100% - 60px);
+  max-height: 100px;
+  height: auto;
+  object-fit: contain;
+  object-position: left;
+  margin: 5px 15px;
+  padding: 10px;
+  border-radius: 15px;
+  border: solid 1px gray;
+}
 
 .logoFlexDiv {
   flex-basis: 50%;
