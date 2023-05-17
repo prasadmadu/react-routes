@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { productDetails } from '../../../data/data';
+import { useParams, Link } from 'react-router-dom'
+import { productDetails, categoryOptions } from '../../../data/data';
 
 const Brand = () => {
   const {id} = useParams();
@@ -15,7 +15,11 @@ const Brand = () => {
   console.log(products)
   return (
     <div>Brand: {id}
-    
+    {categoryOptions.map((category) => (
+        <div key={category.id}>
+          <Link to={`/brand/${id}/category/${category.id}`}>{category.name}</Link>
+        </div>
+      ))}
     {products.map((product) => (
         <div key={product.id}>
           <h3>{product.name}</h3>
